@@ -5,6 +5,18 @@
  */
 package pokemon;
 
+import classesPokemons.Blastoise;
+import classesPokemons.Bulbassauro;
+import classesPokemons.Charizard;
+import classesPokemons.Charmander;
+import classesPokemons.Flareon;
+import classesPokemons.Gyrados;
+import classesPokemons.Jolteon;
+import classesPokemons.Onix;
+import classesPokemons.Pikachu;
+import classesPokemons.Squirtle;
+import classesPokemons.Vaporeon;
+import classesPokemons.Venossauro;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,10 +39,7 @@ public class Treinador {
     Pokemon p10;
     Pokemon p11;
     Pokemon p12; 
-    Time t1;
-    Time t2;
-    Time t3;
-    Time t4;
+    Time timeEscolhido;
 
     /**
      *declara time de pokemons
@@ -51,8 +60,19 @@ public class Treinador {
         vidaTotal = t.pokemons.get(0).healthPoints + t.pokemons.get(1).healthPoints + t.pokemons.get(2).healthPoints;
     }
 
-    Treinador() {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Treinador() {
+        p1 = new Pikachu();
+        p2 = new Blastoise();
+        p3 = new Bulbassauro();
+        p4 = new Charizard();
+        p5 = new Charmander();
+        p6 = new Flareon();
+        p7 = new Gyrados();
+        p8 = new Jolteon();
+        p9 = new Onix();
+        p10 = new Venossauro();
+        p11 = new Vaporeon();
+        p12 = new Squirtle();
     }
         
     /**
@@ -101,16 +121,16 @@ public class Treinador {
     
     public void escolherTime(int i){
         if(i==1){
-            
+            timeEscolhido = new Time(p5,p11,p10);
         }
         if(i==2){
-            
+            timeEscolhido = new Time(p12,p6,p7);
         }
         if(i==3){
-            
+            timeEscolhido = new Time(p3,p8,p2);
         }
         if(i==4){
-            
+            timeEscolhido = new Time(p1,p4,p9);
         }
     }
     

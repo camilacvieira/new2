@@ -25,12 +25,14 @@ public class Frame extends javax.swing.JFrame {
     public Frame(Treinador a, Treinador b) {
         initComponents();
         Panel2.setVisible(false);
+        Panel3.setVisible(false);
         mudaTelaInicial(a, b);
     }
     
     public Frame() {
         initComponents();
         Panel2.setVisible(false);
+        Panel3.setVisible(false);
         mudaTelaInicial();
     }
     
@@ -83,17 +85,19 @@ public class Frame extends javax.swing.JFrame {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         if(component == Time1){
-                            System.out.println("Teste1");
+                            a.escolherTime(1);
                         }
                         if(component == Time2){
-                            System.out.println("Time2");
+                            a.escolherTime(2);
                         }
                         if(component == Time3){
-                            System.out.println("Time3");
+                            a.escolherTime(3);
                         }
                         if(component == Time4){
-                            System.out.println("Time4");
+                            a.escolherTime(4);
                         }
+                        Panel2.setVisible(false);
+                        Panel3.setVisible(false);
                     }
                     
                 });
@@ -110,20 +114,48 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Panel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        Panel1 = new javax.swing.JPanel();
+        iniciarJogo = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         Panel2 = new javax.swing.JPanel();
         Time1 = new javax.swing.JButton();
         Time2 = new javax.swing.JButton();
         Time3 = new javax.swing.JButton();
         Time4 = new javax.swing.JButton();
         escolherTime = new javax.swing.JLabel();
-        Panel1 = new javax.swing.JPanel();
-        iniciarJogo = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1275, 740));
         setResizable(false);
         getContentPane().setLayout(null);
+
+        Panel3.setLayout(null);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceGrafica/images/pokemon bg.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        Panel3.add(jLabel2);
+        jLabel2.setBounds(0, 0, 1280, 720);
+
+        getContentPane().add(Panel3);
+        Panel3.setBounds(0, 0, 1270, 720);
+
+        Panel1.setLayout(null);
+
+        iniciarJogo.setBorderPainted(false);
+        iniciarJogo.setContentAreaFilled(false);
+        iniciarJogo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Panel1.add(iniciarJogo);
+        iniciarJogo.setBounds(420, 260, 480, 120);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceGrafica/images/TelaInicial.png"))); // NOI18N
+        jLabel1.setText("Teste");
+        Panel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 1270, 710);
+
+        getContentPane().add(Panel1);
+        Panel1.setBounds(0, 0, 1270, 720);
 
         Panel2.setLayout(null);
 
@@ -164,22 +196,6 @@ public class Frame extends javax.swing.JFrame {
         getContentPane().add(Panel2);
         Panel2.setBounds(0, 0, 1280, 720);
 
-        Panel1.setLayout(null);
-
-        iniciarJogo.setBorderPainted(false);
-        iniciarJogo.setContentAreaFilled(false);
-        iniciarJogo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Panel1.add(iniciarJogo);
-        iniciarJogo.setBounds(420, 260, 480, 120);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaceGrafica/images/TelaInicial.png"))); // NOI18N
-        jLabel1.setText("Teste");
-        Panel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 1270, 710);
-
-        getContentPane().add(Panel1);
-        Panel1.setBounds(0, 0, 1270, 720);
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -195,6 +211,7 @@ public class Frame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Panel1;
     private javax.swing.JPanel Panel2;
+    private javax.swing.JPanel Panel3;
     private javax.swing.JButton Time1;
     private javax.swing.JButton Time2;
     private javax.swing.JButton Time3;
@@ -202,5 +219,6 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel escolherTime;
     private javax.swing.JButton iniciarJogo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
